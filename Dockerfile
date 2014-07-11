@@ -1,6 +1,6 @@
 # basho-otp
 #
-# VERSION       0.1.0
+# VERSION       0.1.1
 
 FROM phusion/baseimage:0.9.11
 MAINTAINER Hector Castro hector@basho.com
@@ -11,11 +11,19 @@ ENV ERLANG_VERSION R16B02_basho5
 
 # Install dependencies
 RUN apt-get -qq update && apt-get install -y \
+		git \
+		wget \
+		libxml2-dev \
 		build-essential \
 		autoconf \
 		libncurses5-dev \
 		libssl-dev \
-		libpam0g-dev
+		libpam0g-dev \
+		software-properties-common \
+		python-software-properties
+RUN apt-add-repository ppa:webupd8team/java -y && apt-get update && \
+		echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && \
+		apt-get install -y oracle-java7-installer -y
 
 # Install OTP
 ADD https://github.com/basho/otp/archive/OTP_${ERLANG_VERSION}.tar.gz /

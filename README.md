@@ -8,6 +8,9 @@ source, then you may want to install the forked version of Erlang/OTP as well.
 This `Dockerfile` aids building Basho's forked version of Erlang/OTP. The most
 recent fork is `R16B02_basho5`, which is meant to be paired with Riak 2.0.
 
+**Note:** All patches included in the Basho fork have already been adopted in
+later versions of the official Erlang/OTP release.
+
 ## Building
 
 ```
