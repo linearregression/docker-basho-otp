@@ -39,7 +39,7 @@ RUN /usr/sbin/enable_insecure_key
 
 # Cleanup
 RUN rm "/OTP_${ERLANG_VERSION}.tar.gz" \
-	rm -rf "/OTP_${ERLANG_VERSION}"
+	rm -rf "/otp-OTP_${ERLANG_VERSION}"
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Leverage the baseimage-docker init system
