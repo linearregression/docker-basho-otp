@@ -1,6 +1,6 @@
 # basho-otp
 #
-# VERSION       0.1.0
+# VERSION       0.1.1
 
 FROM phusion/baseimage:0.9.11
 MAINTAINER Hector Castro hector@basho.com
